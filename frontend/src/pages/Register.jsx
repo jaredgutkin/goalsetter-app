@@ -11,7 +11,7 @@ function Register() {
         name: '',
         email: '',
         password: '',
-        password2: ''
+        password2: '',
     })
 
     const { name, email, password, password2 } = formData
@@ -19,9 +19,8 @@ function Register() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const {user, isLoading, isError, isSuccess, message } = useSelector
-    (
-        (state)=> state.auth
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
     )
 
     useEffect(() => {
