@@ -8,6 +8,26 @@ const initalState = {
     isError: false,
     isSuccess: false,
     isLoading: false,
-    message: ''
+    message: '',
 }
 
+//register user
+
+
+export const authSlice = createSlice({
+    name: 'auth',
+    initalState,
+    reducers: {
+       reset: (state) => {
+        state.isLoading = false
+        state.isSuccess = false
+        state.isError = false
+        state.message = ''
+       }
+
+    },
+    extraReducers: () => {}
+})
+
+export const { reset } = authSlice.actions
+export default authSlice.reducer
