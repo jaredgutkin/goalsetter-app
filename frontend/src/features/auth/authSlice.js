@@ -1,9 +1,9 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 //get user from local storage
 const user = JSON.parse(localStorage.getItem('user'))
 
-const initalState = {
+const initialState = {
     user: user ? user : null,
     isError: false,
     isSuccess: false,
@@ -24,18 +24,22 @@ export const register = createAsyncThunk(
 
 export const authSlice = createSlice({
     name: 'auth',
-    initalState,
+    initialState,
     reducers: {
        reset: (state) => {
         state.isLoading = false
         state.isSuccess = false
         state.isError = false
         state.message = ''
-       }
+       },
 
     },
-    extraReducers: () => {}
+    extraReducers: (builder) => {
+
+    },
 })
 
 export const { reset } = authSlice.actions
-export default authSlice
+export default authSlice.reducer
+
+
