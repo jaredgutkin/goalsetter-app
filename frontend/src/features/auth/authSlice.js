@@ -12,7 +12,15 @@ const initalState = {
 }
 
 //register user
-
+export const register = createAsyncThunk(
+    'auth/register', 
+    async (user, thunkAPI) => {
+    try {
+        //return await authService.register(user)
+    } catch (error) {
+        
+    }
+})
 
 export const authSlice = createSlice({
     name: 'auth',
@@ -30,4 +38,4 @@ export const authSlice = createSlice({
 })
 
 export const { reset } = authSlice.actions
-export default authSlice.reducer
+export default authSlice
