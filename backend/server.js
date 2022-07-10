@@ -11,6 +11,7 @@ connectDB()
 const app = express()
 
 app.set('port', PORT)
+
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
@@ -28,6 +29,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(errorHandler) 
 
-app.listen(port, () => {
-    console.log(`server started on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`)
 })
